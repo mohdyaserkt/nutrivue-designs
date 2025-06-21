@@ -122,13 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Enhanced populateFoodAnalysis function
     function populateFoodAnalysis() {
         const foodData = {
             "items": [
                 {
                     "name": "Pineapple",
                     "calories_per_gram": 0.5,
+                    "image": "images/pineapple.jpg",
                     "nutrients": {
                         "protein_g": 0.5,
                         "carbohydrates_g": 10.0,
@@ -136,114 +136,105 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 {
-                    "name": "Kiwi",
-                    "calories_per_gram": 0.6,
+                    "name": "Grilled Chicken",
+                    "calories_per_gram": 1.65,
+                    "image": "images/chicken.jpg",
                     "nutrients": {
-                        "protein_g": 1.0,
-                        "carbohydrates_g": 15.0,
-                        "fats_g": 0.5
+                        "protein_g": 25.0,
+                        "carbohydrates_g": 0.0,
+                        "fats_g": 3.0
                     }
                 },
                 {
-                    "name": "Watermelon",
-                    "calories_per_gram": 0.5,
+                    "name": "Mixed Greens",
+                    "calories_per_gram": 0.15,
+                    "image": "images/salad.jpg",
                     "nutrients": {
-                        "protein_g": 0.4,
-                        "carbohydrates_g": 8.0,
+                        "protein_g": 1.0,
+                        "carbohydrates_g": 3.0,
                         "fats_g": 0.2
                     }
                 }
             ],
-            "healthy_alternatives": "This fruit plate is already a healthy option. For even more variety, consider adding other fruits like berries (strawberries, raspberries, blackberries), or a small portion of nuts for added healthy fats and protein."
+            "total_calories": 420,
+            "tips": "This fruit plate is already a healthy option. For better macros balance, consider adding a protein source like Greek yogurt or nuts."
         };
-
-        const container = document.querySelector('.detected-items');
+        
+        const container = document.querySelector('#food-analysis-modal .detected-items');
         container.innerHTML = '';
-
+        
+        // Update summary
+        document.querySelector('#food-analysis-modal .value').textContent = `${foodData.total_calories} kcal`;
+        document.querySelector('#food-analysis-modal .nutrition-tips p').textContent = foodData.tips;
+        
+        // Add food items
         foodData.items.forEach(item => {
             const foodItem = document.createElement('div');
             foodItem.className = 'food-item';
             foodItem.innerHTML = `
-            <div class="food-name">
-                <span>${item.name}</span>
-                <span>${item.calories_per_gram} kcal/g</span>
+                
+                <div class="food-details">
+    <!-- Food Header -->
+    <div class="food-header">
+        <h3 class="food-name">${item.name}</h3>
+        <div class="food-meta">
+            <span class="calorie-badge">
+                <i class="fas fa-fire"></i>
+                ${item.calories_per_gram} kcal/g
+            </span>
+        </div>
+    </div>
+    
+    <!-- Nutrient Pills -->
+    <div class="nutrient-pills">
+        <div class="pill protein">
+            <div class="pill-icon">
+                <i class="fas fa-dumbbell"></i>
             </div>
-            <div class="food-nutrients">
-                <div class="nutrient-item">
-                    <div class="nutrient-value">${item.nutrients.protein_g}g</div>
-                    <div class="nutrient-label">Protein</div>
-                </div>
-                <div class="nutrient-item">
-                    <div class="nutrient-value">${item.nutrients.carbohydrates_g}g</div>
-                    <div class="nutrient-label">Carbs</div>
-                </div>
-                <div class="nutrient-item">
-                    <div class="nutrient-value">${item.nutrients.fats_g}g</div>
-                    <div class="nutrient-label">Fats</div>
-                </div>
+            <div class="pill-content">
+                <span class="pill-value">${item.nutrients.protein_g}g</span>
+                <span class="pill-label">Protein</span>
             </div>
-            <div class="weight-input">
-                <label>Weight (g):</label>
-                <input type="number" value="100" min="1" class="weight-gram">
+        </div>
+        
+        <div class="pill carbs">
+            <div class="pill-icon">
+                <i class="fas fa-wheat-awn"></i>
             </div>
-        `;
+            <div class="pill-content">
+                <span class="pill-value">${item.nutrients.carbohydrates_g}g</span>
+                <span class="pill-label">Carbs</span>
+            </div>
+        </div>
+        
+        <div class="pill fats">
+            <div class="pill-icon">
+                <i class="fas fa-oil-can"></i>
+            </div>
+            <div class="pill-content">
+                <span class="pill-value">${item.nutrients.fats_g}g</span>
+                <span class="pill-label">Fats</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Weight Input -->
+    <div class="weight-control">
+        <label class="weight-label">Adjust Portion</label>
+        <div class="input-group">
+            
+            <input type="number" value="100" min="1" class="weight-input">
+            <span class="unit">g</span>
+            
+        </div>
+    </div>
+</div>
+            `;
             container.appendChild(foodItem);
         });
-
-        document.querySelector('.healthy-alternatives p').textContent = foodData.healthy_alternatives;
     }
-
-    // Enhanced populateLogSummary function
-    function populateLogSummary() {
-        // Calculate totals from food items in first modal
-        let totalCalories = 0;
-        let totalProtein = 0;
-        let totalCarbs = 0;
-        let totalFats = 0;
-
-        document.querySelectorAll('.food-item').forEach(item => {
-            const weight = parseFloat(item.querySelector('.weight-gram').value) || 0;
-            const name = item.querySelector('.food-name span:first-child').textContent;
-            const caloriesPerGram = parseFloat(item.querySelector('.food-name span:last-child').textContent);
-            const protein = parseFloat(item.querySelector('.nutrient-item:nth-child(1) .nutrient-value').textContent);
-            const carbs = parseFloat(item.querySelector('.nutrient-item:nth-child(2) .nutrient-value').textContent);
-            const fats = parseFloat(item.querySelector('.nutrient-item:nth-child(3) .nutrient-value').textContent);
-
-            const calories = (caloriesPerGram * weight).toFixed(1);
-            const proteinTotal = ((protein / 100) * weight).toFixed(1);
-            const carbsTotal = ((carbs / 100) * weight).toFixed(1);
-            const fatsTotal = ((fats / 100) * weight).toFixed(1);
-
-            totalCalories += parseFloat(calories);
-            totalProtein += parseFloat(proteinTotal);
-            totalCarbs += parseFloat(carbsTotal);
-            totalFats += parseFloat(fatsTotal);
-        });
-
-        const container = document.querySelector('.summary-items');
-        container.innerHTML = '';
-
-        document.querySelectorAll('.food-item').forEach(item => {
-            const name = item.querySelector('.food-name span:first-child').textContent;
-            const weight = parseFloat(item.querySelector('.weight-gram').value) || 0;
-            const caloriesPerGram = parseFloat(item.querySelector('.food-name span:last-child').textContent);
-            const calories = (caloriesPerGram * weight).toFixed(1);
-
-            const summaryItem = document.createElement('div');
-            summaryItem.className = 'summary-item';
-            summaryItem.innerHTML = `
-            <span class="summary-item-name">${name} (${weight}g)</span>
-            <span class="summary-item-value">${calories} kcal</span>
-        `;
-            container.appendChild(summaryItem);
-        });
-
-        document.querySelector('.total-summary .total-value:nth-child(1)').textContent = `${totalCalories.toFixed(1)} kcal`;
-        document.querySelector('.total-summary .total-value:nth-child(2)').textContent = `${totalProtein.toFixed(1)} g`;
-        document.querySelector('.total-summary .total-value:nth-child(3)').textContent = `${totalCarbs.toFixed(1)} g`;
-        document.querySelector('.total-summary .total-value:nth-child(4)').textContent = `${totalFats.toFixed(1)} g`;
-    }
-
+   
+    
     // Camera functionality
     let stream = null;
 

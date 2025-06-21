@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Nutrition App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- Background Blur Elements -->
+    <div class="bg-blur-1"></div>
+    <div class="bg-blur-2"></div>
+
+    <!-- Header -->
+    <header class="glass-nav">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Nutrition App">
+            </div>
+            <div class="user-menu">
+                <span class="user-name">Profile</span>
+                <div class="user-avatar">
+                    <img src="profile-pic.jpg" alt="User">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+        <!-- Profile Header Section -->
+        <section class="profile-header glass-card">
+            <div class="avatar-container">
+                <div class="avatar-wrapper pulse">
+                    <img src="profile-pic.jpg" alt="Profile" class="profile-avatar">
+                    <button class="edit-avatar-btn"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">John Doe</h1>
+                    <p class="profile-email">user@example.com</p>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-value">2200</div>
+                    <div class="stat-label">Daily Target</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-weight-hanging"></i></div>
+                    <div class="stat-value">75.5</div>
+                    <div class="stat-label">Weight (kg)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-ruler-vertical"></i></div>
+                    <div class="stat-value">175</div>
+                    <div class="stat-label">Height (cm)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Information Section -->
+        <section class="profile-section glass-card">
+            <div class="section-header">
+                <div class="icon-circle"><i class="fas fa-user"></i></div>
+                <h2>Personal Information</h2>
+            </div>
+            
+            <div class="profile-grid">
+                <!-- Email (non-editable) -->
+                <div class="profile-field">
+                    <label><i class="fas fa-envelope"></i> Email</label>
+                    <div class="static-value">user@example.com</div>
+                </div>
+                
+                <!-- Name -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-signature"></i> Full Name</label>
+                    <div class="static-value">John Doe</div>
+                    <input type="text" class="edit-input" value="John Doe">
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+                
+                <!-- Age -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-birthday-cake"></i> Age</label>
+                    <div class="static-value">30</div>
+                    <input type="number" class="edit-input" value="30">
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+                
+                <!-- Gender -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-venus-mars"></i> Gender</label>
+                    <div class="static-value">Male</div>
+                    <select class="edit-input">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Metrics Section -->
+        <section class="profile-section glass-card">
+            <div class="section-header">
+                <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
+                <h2>Health Metrics</h2>
+            </div>
+            
+            <div class="profile-grid">
+                <!-- Weight -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-weight"></i> Weight (kg)</label>
+                    <div class="static-value">75.5</div>
+                    <input type="number" step="0.1" class="edit-input" value="75.5">
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+                
+                <!-- Height -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-ruler-combined"></i> Height (cm)</label>
+                    <div class="static-value">175</div>
+                    <input type="number" class="edit-input" value="175">
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preferences Section -->
+        <section class="profile-section glass-card">
+            <div class="section-header">
+                <div class="icon-circle"><i class="fas fa-sliders-h"></i></div>
+                <h2>Preferences</h2>
+            </div>
+            
+            <div class="profile-grid">
+                <!-- Activity Level -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-running"></i> Activity Level</label>
+                    <div class="static-value">Moderately Active</div>
+                    <select class="edit-input">
+                        <option>Sedentary</option>
+                        <option>Lightly Active</option>
+                        <option selected>Moderately Active</option>
+                        <option>Very Active</option>
+                        <option>Extremely Active</option>
+                    </select>
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+                
+                <!-- Goal -->
+                <div class="profile-field editable">
+                    <label><i class="fas fa-bullseye"></i> Fitness Goal</label>
+                    <div class="static-value">Maintain Weight</div>
+                    <select class="edit-input">
+                        <option>Lose Weight</option>
+                        <option selected>Maintain Weight</option>
+                        <option>Gain Weight</option>
+                        <option>Build Muscle</option>
+                    </select>
+                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="save-btn"><i class="fas fa-check"></i></button>
+                </div>
+                
+                <!-- Target Calories (non-editable) -->
+                <div class="profile-field">
+                    <label><i class="fas fa-fire"></i> Daily Target</label>
+                    <div class="static-value">2200 kcal</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Section -->
+        <section class="profile-section glass-card">
+            <div class="section-header">
+                <div class="icon-circle"><i class="fas fa-user-cog"></i></div>
+                <h2>Account Settings</h2>
+            </div>
+            
+            <div class="profile-grid">
+                <!-- Account Status -->
+                <div class="profile-field toggle-field">
+                    <label><i class="fas fa-power-off"></i> Account Status</label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                
+                <!-- Actions -->
+                <div class="profile-actions">
+                    <button class="secondary-button"><i class="fas fa-lock"></i> Change Password</button>
+                    <button class="secondary-button"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,12 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./animation.css">
 </head>
+
 <body>
     <!-- Background Elements -->
     <div class="bg-blur-1"></div>
     <div class="bg-blur-2"></div>
-    
+
     <!-- Header -->
     <header class="glass-nav">
         <div class="container">
@@ -35,97 +37,100 @@
         <div class="container">
             <!-- Daily Summary Section -->
             <!-- Modern Daily Summary Section -->
-<section class="daily-summary glass-card slide-up">
-    <div class="summary-header">
-        <div class="header-content">
-            <h2>
-                <span class="icon-circle">
-                    <i class="fas fa-chart-line"></i>
-                </span>
-                Today's Nutrition
-            </h2>
-            <div class="date-badge">
-                <i class="far fa-calendar"></i>
-                <span>June 12, 2025</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="summary-grid">
-        <!-- Calorie Ring -->
-        <div class="calorie-ring">
-            <div class="ring-container">
-                <svg class="progress-ring" width="140" height="140">
-                    <circle class="progress-ring-bg" stroke="#F0F0F0" stroke-width="10" fill="transparent" r="60" cx="70" cy="70"/>
-                    <circle class="progress-ring-fill" stroke="url(#calorie-gradient)" stroke-width="10" stroke-dasharray="377" stroke-dashoffset="151" fill="transparent" r="60" cx="70" cy="70"/>
-                </svg>
-                <svg width="0" height="0">
-                    <defs>
-                        <linearGradient id="calorie-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#FF9A8B"/>
-                            <stop offset="100%" stop-color="#FF6B95"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="ring-content">
-                    <div class="calories-display">
-                        <span class="consumed">1,200</span>
-                        <span class="total">/ 2,000</span>
-                    </div>
-                    <div class="calorie-label">
-                        <i class="fas fa-fire"></i>
-                        <span>CALORIES</span>
+            <section class="daily-summary glass-card slide-up">
+                <div class="summary-header">
+                    <div class="header-content">
+                        <h2>
+                            <span class="icon-circle">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            Today's Nutrition
+                        </h2>
+                        <div class="date-badge">
+                            <i class="far fa-calendar"></i>
+                            <span>June 12, 2025</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Macros Breakdown -->
-        <div class="macros-grid">
-            <!-- Protein -->
-            <div class="macro-card protein">
-                <div class="macro-icon">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
-                <div class="macro-details">
-                    <span class="macro-name">Protein</span>
-                    <span class="macro-value">24<span class="unit">g</span></span>
-                    <div class="macro-progress">
-                        <div class="progress-fill" style="width: 60%"></div>
+
+                <div class="summary-grid">
+                    <!-- Calorie Ring -->
+                    <div class="calorie-ring">
+                        <div class="ring-container">
+                            <svg class="progress-ring" width="140" height="140">
+                                <circle class="progress-ring-bg" stroke="#F0F0F0" stroke-width="10" fill="transparent"
+                                    r="60" cx="70" cy="70" />
+                                <circle class="progress-ring-fill" stroke="url(#calorie-gradient)" stroke-width="10"
+                                    stroke-dasharray="377" stroke-dashoffset="151" fill="transparent" r="60" cx="70"
+                                    cy="70" />
+                            </svg>
+                            <svg width="0" height="0">
+                                <defs>
+                                    <linearGradient id="calorie-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#FF9A8B" />
+                                        <stop offset="100%" stop-color="#FF6B95" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="ring-content">
+                                <div class="calories-display">
+                                    <span class="consumed">1,200</span>
+                                    <span class="total">/ 2,000</span>
+                                </div>
+                                <div class="calorie-label">
+                                    <i class="fas fa-fire"></i>
+                                    <span>CALORIES</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Macros Breakdown -->
+                    <div class="macros-grid">
+                        <!-- Protein -->
+                        <div class="macro-card protein">
+                            <div class="macro-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <div class="macro-details">
+                                <span class="macro-name">Protein</span>
+                                <span class="macro-value">24<span class="unit">g</span></span>
+                                <div class="macro-progress">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carbs -->
+                        <div class="macro-card carbs">
+                            <div class="macro-icon">
+                                <i class="fas fa-wheat-awn"></i>
+                            </div>
+                            <div class="macro-details">
+                                <span class="macro-name">Carbs</span>
+                                <span class="macro-value">130<span class="unit">g</span></span>
+                                <div class="macro-progress">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fats -->
+                        <div class="macro-card fats">
+                            <div class="macro-icon">
+                                <i class="fas fa-oil-can"></i>
+                            </div>
+                            <div class="macro-details">
+                                <span class="macro-name">Fats</span>
+                                <span class="macro-value">40<span class="unit">g</span></span>
+                                <div class="macro-progress">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Carbs -->
-            <div class="macro-card carbs">
-                <div class="macro-icon">
-                    <i class="fas fa-wheat-awn"></i>
-                </div>
-                <div class="macro-details">
-                    <span class="macro-name">Carbs</span>
-                    <span class="macro-value">130<span class="unit">g</span></span>
-                    <div class="macro-progress">
-                        <div class="progress-fill" style="width: 65%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Fats -->
-            <div class="macro-card fats">
-                <div class="macro-icon">
-                    <i class="fas fa-oil-can"></i>
-                </div>
-                <div class="macro-details">
-                    <span class="macro-name">Fats</span>
-                    <span class="macro-value">40<span class="unit">g</span></span>
-                    <div class="macro-progress">
-                        <div class="progress-fill" style="width: 50%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
 
             <!-- Scan Section -->
             <section class="scan-section glass-card slide-up">
@@ -133,7 +138,7 @@
                     <h3>Recent Meals</h3>
                     <a href="#" class="view-all">View All</a>
                 </div>
-                
+
                 <div class="meals-grid">
                     <div class="meal-card">
                         <div class="meal-icon breakfast">
@@ -156,20 +161,20 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="scan-options">
                     <!-- Mobile - Camera Button -->
                     <button id="open-camera" class="scan-option mobile-only">
                         <i class="fas fa-camera"></i>
                         <span>Scan Meal</span>
                     </button>
-                    
+
                     <!-- Desktop - Upload Button -->
                     <button id="upload-image" class="scan-option desktop-only">
                         <i class="fas fa-cloud-upload-alt"></i>
                         <span>Upload Image</span>
                     </button>
-                    
+
                     <input type="file" id="file-input" accept="image/*" style="display: none;">
                 </div>
             </section>
@@ -184,7 +189,7 @@
                         <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
-                
+
                 <div class="calendar">
                     <div class="weekdays">
                         <span>Sun</span>
@@ -195,7 +200,7 @@
                         <span>Fri</span>
                         <span>Sat</span>
                     </div>
-                    
+
                     <div class="days">
                         <!-- Calendar days will be populated by JavaScript -->
                     </div>
@@ -204,27 +209,50 @@
         </div>
     </main>
 
-    <!-- Modal 1: Food Analysis -->
+    <!-- Modern Food Analysis Modal -->
     <div id="food-analysis-modal" class="modal">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3>Food Analysis</h3>
+                <div class="header-content">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Meal Analysis</h3>
+                </div>
                 <button class="close-modal">&times;</button>
             </div>
-            
+
             <div class="modal-body">
+                <div class="nutrition-summary" style="display: none;">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="summary-text">
+                            <span class="label">Total Estimated</span>
+                            <span class="value">420 kcal</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="detected-items">
                     <!-- Items will be populated by JavaScript -->
                 </div>
-                
-                <div class="healthy-alternatives">
-                    <h4>Healthy Alternatives</h4>
-                    <p>This fruit plate is already a healthy option. For even more variety, consider adding other fruits like berries (strawberries, raspberries, blackberries), or a small portion of nuts for added healthy fats and protein.</p>
+
+                <div class="nutrition-tips">
+                    <div class="tips-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Nutrition Tips</h4>
+                    </div>
+                    <p>This fruit plate is already a healthy option. For better macros balance, consider adding a
+                        protein source like Greek yogurt or nuts.</p>
                 </div>
             </div>
-            
+
             <div class="modal-footer">
-                <button id="add-to-log" class="cta-button pulse">Add to Log</button>
+                <button id="add-to-log" class="cta-button pulse">
+                    <i class="fas fa-plus-circle"></i> Add to Daily Log
+                </button>
             </div>
         </div>
     </div>
@@ -233,38 +261,143 @@
     <div id="log-summary-modal" class="modal">
         <div class="modal-content glass-card">
             <div class="modal-header">
-                <h3>Meal Added</h3>
+                <div class="header-content">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Meal Added Successfully</h3>
+                    <!-- <p class="header-subtext">Your dinner has been logged</p> -->
+                </div>
                 <button class="close-modal">&times;</button>
             </div>
-            
+    
             <div class="modal-body">
-                <div class="summary-items">
-                    <!-- Items will be populated by JavaScript -->
+                <div class="meal-type-badge">
+                    <i class="fas fa-utensils"></i>
+                    <span>Dinner</span>
+                    <div class="summary-icon">
+                        <i class="fas fa-clock"></i>
+                        <span>Just now</span>
+                    </div>
                 </div>
                 
-                <div class="total-summary">
-                    <div class="total-item">
-                        <span>Total Calories</span>
-                        <span class="total-value">33.5 kcal</span>
+                <div class="food-items-list">
+                    <div class="section-title">
+                        <i class="fas fa-carrot"></i>
+                        <h4>Food Items</h4>
                     </div>
-                    <div class="total-item">
-                        <span>Protein</span>
-                        <span class="total-value">2.1 g</span>
+                    
+                    <div class="food-item">
+                        <div class="food-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="food-info">
+                            <span class="food-name">Lettuce</span>
+                            <span class="food-weight"><i class="fas fa-weight"></i> 43g</span>
+                        </div>
+                        <div class="food-calories">
+                            <i class="fas fa-fire"></i> 8.6 kcal
+                        </div>
                     </div>
-                    <div class="total-item">
-                        <span>Carbs</span>
-                        <span class="total-value">7.0 g</span>
+                    
+                    <div class="food-item">
+                        <div class="food-icon" style="color: #ff6b6b;">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div class="food-info">
+                            <span class="food-name">Tomatoes</span>
+                            <span class="food-weight"><i class="fas fa-weight"></i> 43g</span>
+                        </div>
+                        <div class="food-calories">
+                            <i class="fas fa-fire"></i> 8.6 kcal
+                        </div>
                     </div>
-                    <div class="total-item">
-                        <span>Fats</span>
-                        <span class="total-value">0.4 g</span>
+                    
+                    <div class="food-item">
+                        <div class="food-icon" style="color: #51cf66;">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="food-info">
+                            <span class="food-name">Cucumber</span>
+                            <span class="food-weight"><i class="fas fa-weight"></i> 34g</span>
+                        </div>
+                        <div class="food-calories">
+                            <i class="fas fa-fire"></i> 3.4 kcal
+                        </div>
+                    </div>
+                    
+                    <div class="food-item">
+                        <div class="food-icon" style="color: #94d82d;">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <div class="food-info">
+                            <span class="food-name">Parsley</span>
+                            <span class="food-weight"><i class="fas fa-weight"></i> 43g</span>
+                        </div>
+                        <div class="food-calories">
+                            <i class="fas fa-fire"></i> 12.9 kcal
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="nutrition-summary-container">
+                    <div class="section-title">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Nutrition Summary</h4>
+                    </div>
+                    
+                    <div class="nutrition-summary">
+                        <div class="macro-circles">
+                            <div class="macro-circle protein">
+                                <div class="circle-progress" style="--progress: 0.5">
+                                    <div class="circle-icon">
+                                        <i class="fas fa-dumbbell"></i>
+                                    </div>
+                                    <span>2.1g</span>
+                                </div>
+                                <label>Protein</label>
+                            </div>
+                            <div class="macro-circle carbs">
+                                <div class="circle-progress" style="--progress: 0.7">
+                                    <div class="circle-icon">
+                                        <i class="fas fa-bread-slice"></i>
+                                    </div>
+                                    <span>7.0g</span>
+                                </div>
+                                <label>Carbs</label>
+                            </div>
+                            <div class="macro-circle fats">
+                                <div class="circle-progress" style="--progress: 0.4">
+                                    <div class="circle-icon">
+                                        <i class="fas fa-oil-can"></i>
+                                    </div>
+                                    <span>0.4g</span>
+                                </div>
+                                <label>Fats</label>
+                            </div>
+                        </div>
+                        
+                        <div class="total-calories">
+                            <div class="calories-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="calories-value">33.5</div>
+                            <div class="calories-label">Total Calories</div>
+                            <div class="calories-comparison">
+                                <i class="fas fa-utensil-spoon"></i> About 1 small salad
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+    
             <div class="modal-footer">
-                <button class="secondary-button">View Full Log</button>
-                <button class="cta-button">Done</button>
+                <button class="secondary-button">
+                    <i class="fas fa-book-open"></i> View Full Log
+                </button>
+                <button class="cta-button pulse">
+                    <i class="fas fa-check"></i> Done
+                </button>
             </div>
         </div>
     </div>
@@ -276,7 +409,7 @@
                 <h3>Scan Your Meal</h3>
                 <button class="close-modal">&times;</button>
             </div>
-            
+
             <div class="modal-body">
                 <div class="camera-preview">
                     <video id="camera-view" autoplay playsinline></video>
@@ -291,4 +424,5 @@
 
     <script src="./index.js"></script>
 </body>
+
 </html>
